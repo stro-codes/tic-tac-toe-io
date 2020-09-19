@@ -24,8 +24,10 @@ export default class Game extends React.Component {
         }
     }
 
-    initSocket() {        
-        this.socket = io.connect('localhost:8000')
+    initSocket() {       
+        const SITE_URL = 'https://tic-tac-toe-io.herokuapp.com/'
+        
+        this.socket = io.connect(SITE_URL)
 
         this.socket.on('connect', () => {
             console.log('Successful Connection!')
